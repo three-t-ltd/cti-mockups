@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>リチウムイオン電池の試作機とは｜電極塗工・ロールプレス・巻取の工程別装置構成と量産化への設計指針 | 株式会社CTI</title>
+<meta name="description" content="リチウムイオン電池（LIB）の試作機を選ぶ際に押さえたい、工程別の装置構成（混練機・電極塗工機・ロールプレス・スリッター・巻取機）と、ラボ規模から量産規模へスケールアップする際の設計ポイントを、産業機械メーカーCTIが解説します。熱風乾燥技術と一貫設計に強み。">
+<meta name="keywords" content="リチウムイオン電池,LIB,試作機,電極塗工機,ロールコーター,ロールプレス,巻取機,スリッター,二次電池,量産機,ラボ機">
+<meta property="og:type" content="article">
+<meta property="og:title" content="リチウムイオン電池の試作機とは｜電極塗工・ロールプレス・巻取の工程別装置構成と量産化への設計指針">
+<meta property="og:description" content="リチウムイオン電池の試作機を選ぶ際に押さえたい工程別の装置構成と、量産化への設計指針を産業機械メーカーCTIが解説。">
+<meta property="og:site_name" content="株式会社CTI">
+<meta property="og:url" content="https://ctinnovation.co.jp/column/lithium-ion-battery-prototype-machine/">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "リチウムイオン電池の試作機とは｜電極塗工・ロールプレス・巻取の工程別装置構成と量産化への設計指針",
+      "description": "リチウムイオン電池（LIB）の試作機を選ぶ際に押さえたい、工程別の装置構成と、ラボ規模から量産規模へスケールアップする際の設計ポイントを産業機械メーカーCTIが解説します。",
+      "author": {"@type": "Organization", "name": "株式会社CTI", "url": "https://ctinnovation.co.jp/"},
+      "publisher": {"@type": "Organization", "name": "株式会社CTI", "url": "https://ctinnovation.co.jp/"},
+      "datePublished": "2026-05-01",
+      "dateModified": "2026-05-01",
+      "inLanguage": "ja",
+      "mainEntityOfPage": "https://ctinnovation.co.jp/column/lithium-ion-battery-prototype-machine/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "TOP", "item": "https://ctinnovation.co.jp/"},
+        {"@type": "ListItem", "position": 2, "name": "コラム", "item": "https://ctinnovation.co.jp/column/"},
+        {"@type": "ListItem", "position": 3, "name": "リチウムイオン電池の試作機とは"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "試作機（ラボ機）と量産機の違いは何ですか？",
+         "acceptedAnswer": {"@type": "Answer", "text": "試作機は処理量よりも条件可変性と段取り替えの速さを優先します。一方、量産機はタクトタイムと歩留まりを優先し、ライン全体の同期と継続稼働を重視します。CTIは両方を同じ設計思想でスケールできる体制を持っています。"}},
+        {"@type": "Question", "name": "電極塗工機にはどのような方式がありますか？",
+         "acceptedAnswer": {"@type": "Answer", "text": "ダイヘッド方式、コンマヘッド方式、グラビア方式の3つが代表的です。粘度や薄塗り要件で使い分けが必要で、試作段階ではヘッド交換型のロールコーターを選ぶと装置を買い換えずに済みます。"}},
+        {"@type": "Question", "name": "ロールプレスの加圧トン数はどう選びますか？",
+         "acceptedAnswer": {"@type": "Answer", "text": "電極の目標密度と基材幅から逆算します。試作用途では1t〜10tクラス、量産用途では数十tクラスが目安です。加熱ロール対応の有無も合わせて検討します。"}},
+        {"@type": "Question", "name": "ラボから量産にスケールアップするときに気を付ける点は？",
+         "acceptedAnswer": {"@type": "Answer", "text": "塗工速度に追従する乾燥能力、ライン全体のテンション同期、設置スペースと電源容量の3点が見落とされやすい項目です。CTIはテンターオーブンで培った熱風技術を活用し、量産時の乾燥不足や色ムラを抑えます。"}},
+        {"@type": "Question", "name": "リチウムイオン電池の試作機・量産機を一括で発注できますか？",
+         "acceptedAnswer": {"@type": "Answer", "text": "はい、可能です。CTIは設計、精密板金加工、製缶加工、機械加工、組立、塗装、梱包出荷、現地据付までを社内一貫で対応しており、複数装置の同時設計と統合検証ができます。"}},
+        {"@type": "Question", "name": "全固体電池や次世代電池の試作にも対応できますか？",
+         "acceptedAnswer": {"@type": "Answer", "text": "対応可能です。CTIは熱風乾燥と精密塗工をベースとしたカスタムマシン開発を強みとしており、固体電解質スラリーの塗工や薄膜化など、新規研究開発テーマへの装置設計をご相談いただけます。"}}
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --cti-blue: #1F50E1;
+    --cti-blue-dark: #0E2A8C;
+    --cti-navy: #0A1A4A;
+    --cti-teal: #5DD0E2;
+    --cti-teal-deep: #2BB1C7;
+    --cti-bg: #ffffff;
+    --cti-bg-soft: #F2F6FF;
+    --cti-text: #212529;
+    --cti-text-mute: #5b6271;
+    --cti-line: #E1E7F4;
+    --max: 1080px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--cti-bg);color:var(--cti-text);font-family: system-ui, -apple-system, "Segoe UI", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic UI", Roboto, sans-serif; line-height:1.85; font-size:16px;}
+  a{color:var(--cti-blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ===== ヘッダー ===== */
+  .header{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;border-bottom:1px solid var(--cti-line);position:sticky;top:0;background:#fff;z-index:10}
+  .header .logo{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--cti-blue);font-size:18px}
+  .header .logo .mark{display:inline-block;width:34px;height:24px;background:var(--cti-blue);color:#fff;font-style:italic;font-weight:700;text-align:center;line-height:24px;border-radius:2px;letter-spacing:1px}
+  .header nav{display:flex;gap:18px;align-items:center}
+  .header nav a{color:var(--cti-text);font-size:13px;font-weight:600}
+  .header nav a small{display:block;font-size:10px;color:var(--cti-text-mute);font-weight:500;margin-top:2px}
+  .header .contact-btn{background:#fff;color:var(--cti-blue);border:1px solid var(--cti-line);padding:10px 18px;border-radius:2px;font-size:13px;font-weight:700}
+
+  /* ===== ヒーロー ===== */
+  .hero{position:relative;background:linear-gradient(110deg, var(--cti-blue) 0%, var(--cti-blue) 38%, transparent 38.1%), url('https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?w=1600&q=80') right center / cover no-repeat #ddd;padding:96px 0 120px;color:#fff;overflow:hidden}
+  .hero::after{content:"";position:absolute;left:30%;top:0;bottom:0;width:80px;background:linear-gradient(110deg, var(--cti-blue) 49%, transparent 50%)}
+  .hero .inner{max-width:var(--max);margin:0 auto;padding:0 32px;position:relative;z-index:2}
+  .hero .eyebrow{font-family:Arial,sans-serif;font-size:12px;letter-spacing:3px;font-weight:700;opacity:.85}
+  .hero h1{font-size:34px;line-height:1.45;margin:14px 0 18px;font-weight:800;letter-spacing:.02em}
+  .hero h1 .en{display:block;font-family:Arial,sans-serif;font-size:48px;letter-spacing:.04em;color:#fff;margin-bottom:10px}
+  .hero p.lede{max-width:640px;font-size:15px;color:#eaf0ff;margin:0}
+
+  /* ===== パンくず ===== */
+  .breadcrumb{max-width:var(--max);margin:0 auto;padding:24px 32px 0;font-size:12px;color:var(--cti-text-mute)}
+  .breadcrumb a{color:var(--cti-text-mute)}
+  .breadcrumb .sep{margin:0 8px;color:var(--cti-blue)}
+
+  /* ===== セクション共通 ===== */
+  main{max-width:var(--max);margin:0 auto;padding:32px 32px 80px}
+  section{padding:48px 0;border-bottom:1px dashed var(--cti-line)}
+  section:last-of-type{border-bottom:none}
+  .sec-head{position:relative;margin-bottom:28px;padding-left:60px}
+  .sec-head::before{content:"";position:absolute;left:0;top:8px;width:46px;height:46px;background-image:radial-gradient(var(--cti-teal) 1.5px, transparent 1.6px);background-size:8px 8px;opacity:.7}
+  .sec-head .en{font-family:Arial,sans-serif;font-size:34px;font-weight:800;color:var(--cti-blue);letter-spacing:.04em;line-height:1}
+  .sec-head .ja{font-size:14px;color:var(--cti-text);font-weight:700;margin-left:8px;vertical-align:6px}
+  h2.sec-title{font-size:22px;color:var(--cti-navy);margin:0 0 14px;font-weight:700;line-height:1.55;border-left:5px solid var(--cti-blue);padding:6px 0 6px 14px;background:var(--cti-bg-soft)}
+  h3{font-size:17px;color:var(--cti-navy);margin:28px 0 8px;font-weight:700;line-height:1.55}
+  h3::before{content:"■ ";color:var(--cti-teal-deep);font-size:13px}
+  p{margin:0 0 14px;color:var(--cti-text)}
+
+  /* ===== TOC ===== */
+  .toc{background:var(--cti-bg-soft);border:1px solid var(--cti-line);padding:22px 28px;border-radius:4px;margin-bottom:32px}
+  .toc h4{margin:0 0 12px;font-size:13px;color:var(--cti-blue);letter-spacing:.08em}
+  .toc ol{margin:0;padding-left:22px;color:var(--cti-text);font-size:14px}
+  .toc ol li{margin-bottom:6px}
+  .toc a{color:var(--cti-text)}
+
+  /* ===== 表 ===== */
+  table.spec{width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:14px}
+  table.spec th, table.spec td{border:1px solid var(--cti-line);padding:10px 14px;vertical-align:top;text-align:left}
+  table.spec th{background:var(--cti-bg-soft);color:var(--cti-navy);font-weight:700;width:28%}
+
+  /* ===== カード ===== */
+  .cards{display:grid;grid-template-columns:repeat(3, 1fr);gap:16px;margin:16px 0 8px}
+  .card{border:1px solid var(--cti-line);border-top:4px solid var(--cti-blue);padding:20px;border-radius:2px;background:#fff}
+  .card h4{margin:0 0 8px;font-size:15px;color:var(--cti-navy);font-weight:700}
+  .card p{font-size:13px;color:var(--cti-text-mute);margin:0;line-height:1.7}
+
+  /* ===== 強調ブロック ===== */
+  .callout{background:linear-gradient(135deg, var(--cti-blue) 0%, var(--cti-blue-dark) 100%);color:#fff;padding:28px 32px;border-radius:4px;margin:24px 0}
+  .callout strong{color:var(--cti-teal)}
+
+  /* ===== FAQ ===== */
+  details.faq{border:1px solid var(--cti-line);border-radius:2px;padding:14px 18px;margin-bottom:10px;background:#fff}
+  details.faq[open]{background:var(--cti-bg-soft);border-color:var(--cti-blue)}
+  details.faq summary{cursor:pointer;font-weight:700;color:var(--cti-navy);list-style:none;position:relative;padding-left:32px;font-size:15px}
+  details.faq summary::before{content:"Q";position:absolute;left:0;top:0;background:var(--cti-blue);color:#fff;width:22px;height:22px;border-radius:50%;text-align:center;line-height:22px;font-size:12px;font-weight:700}
+  details.faq summary::-webkit-details-marker{display:none}
+  details.faq .a{margin-top:12px;padding-left:32px;position:relative;color:var(--cti-text);font-size:14px;line-height:1.85}
+  details.faq .a::before{content:"A";position:absolute;left:0;top:0;background:var(--cti-teal-deep);color:#fff;width:22px;height:22px;border-radius:50%;text-align:center;line-height:22px;font-size:12px;font-weight:700}
+
+  /* ===== CTA ===== */
+  .cta{background:var(--cti-bg-soft);border:1px solid var(--cti-line);padding:36px;text-align:center;border-radius:4px;margin-top:40px}
+  .cta h3{margin-top:0;font-size:20px;color:var(--cti-navy)}
+  .cta h3::before{content:""}
+  .cta .btn{display:inline-block;background:var(--cti-blue);color:#fff;padding:14px 36px;border-radius:2px;font-weight:700;margin-top:8px;font-size:15px}
+  .cta .btn:hover{background:var(--cti-blue-dark);text-decoration:none}
+
+  /* ===== フッター ===== */
+  footer{background:var(--cti-navy);color:#cfd6e8;padding:36px 0;text-align:center;font-size:12px;margin-top:40px}
+  footer a{color:#fff}
+
+  /* ===== レスポンシブ ===== */
+  @media (max-width: 760px){
+    .header nav{display:none}
+    .hero{padding:64px 0 80px;background-position:right -120px center}
+    .hero h1{font-size:24px}
+    .hero h1 .en{font-size:32px}
+    .cards{grid-template-columns:1fr}
+    .sec-head{padding-left:0}
+    .sec-head::before{display:none}
+    .sec-head .en{font-size:24px}
+  }
+
+  /* ===== パスワード認証画面 ===== */
+  #auth-screen{position:fixed;inset:0;background:linear-gradient(135deg, #0E2A8C 0%, #1F50E1 100%);display:flex;align-items:center;justify-content:center;z-index:9999;padding:24px}
+  #auth-screen .auth-card{background:#fff;padding:48px 40px;border-radius:8px;max-width:420px;width:100%;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.3)}
+  #auth-screen .lock{width:56px;height:56px;background:#1F50E1;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px;line-height:56px}
+  #auth-screen h2{margin:0 0 8px;color:#0A1A4A;font-size:20px;font-weight:700}
+  #auth-screen p.note{margin:0 0 24px;color:#5b6271;font-size:13px;line-height:1.7}
+  #auth-screen input{width:100%;padding:12px 14px;border:1px solid #E1E7F4;border-radius:4px;font-size:15px;margin-bottom:14px;font-family:inherit;box-sizing:border-box}
+  #auth-screen input:focus{outline:none;border-color:#1F50E1}
+  #auth-screen button{background:#1F50E1;color:#fff;border:none;padding:12px 32px;border-radius:4px;font-size:15px;font-weight:700;cursor:pointer;width:100%}
+  #auth-screen button:hover{background:#0E2A8C}
+  #auth-error{color:#d33;font-size:13px;margin-top:12px;display:none}
+  #auth-screen .footer-note{margin-top:20px;font-size:11px;color:#9aa3b5}
+</style>
+</head>
+<body>
+
+<!-- ===== パスワード認証画面 ===== -->
+<div id="auth-screen">
+  <div class="auth-card">
+    <div class="lock">🔒</div>
+    <h2>関係者限定ページ</h2>
+    <p class="note">このページはパスワード保護されています。<br>パスワードをご入力ください。</p>
+    <input type="password" id="password-input" placeholder="パスワード" onkeydown="if(event.key==='Enter')checkPassword()">
+    <button onclick="checkPassword()">アクセス</button>
+    <div id="auth-error">パスワードが正しくありません。</div>
+    <div class="footer-note">株式会社CTI｜関係者向けモックアップ</div>
+  </div>
+</div>
+
+<div id="report-content" style="display:none;">
+
+<!-- ===== ヘッダー（既存サイトの簡易再現） ===== -->
+<header class="header">
+  <div class="logo"><span class="mark">cti</span>株式会社CTI</div>
+  <nav>
+    <a href="/business/">BUSINESS<small>事業案内</small></a>
+    <a href="/company/">COMPANY<small>会社情報</small></a>
+    <a href="/procurement/">PROCUREMENT<small>資材調達</small></a>
+    <a href="/recruit/">RECRUIT<small>採用情報</small></a>
+    <a href="/faq/">FAQ<small>よくある質問</small></a>
+    <a href="/news/">NEWS<small>お知らせ</small></a>
+    <a class="contact-btn" href="/contact/">CONTACT お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- ===== ヒーロー ===== -->
+<section class="hero">
+  <div class="inner">
+    <div class="eyebrow">COLUMN | TECHNICAL</div>
+    <h1>
+      <span class="en">LIB PROTOTYPE MACHINE</span>
+      リチウムイオン電池の試作機とは｜<br>電極塗工から巻取まで、工程別の装置構成と量産化への設計指針
+    </h1>
+    <p class="lede">電池メーカーR&amp;Dと量産技術部に向けて、試作機（ラボ機）と量産機の違い、工程別の装置構成、そしてスケールアップで見落とされやすい設計ポイントを、産業機械メーカーの視点でまとめました。</p>
+  </div>
+</section>
+
+<nav class="breadcrumb">
+  <a href="/">TOP</a><span class="sep">▸</span>
+  <a href="/column/">コラム</a><span class="sep">▸</span>
+  リチウムイオン電池の試作機とは
+</nav>
+
+<main>
+
+  <!-- 目次 -->
+  <div class="toc">
+    <h4>目次</h4>
+    <ol>
+      <li><a href="#s1">リチウムイオン電池の試作と量産で求められる装置の違い</a></li>
+      <li><a href="#s2">電池試作の全工程と必要な装置</a></li>
+      <li><a href="#s3">電極塗工機（コーター）の方式と選び方</a></li>
+      <li><a href="#s4">ロールプレス装置の選び方と加圧方式</a></li>
+      <li><a href="#s5">巻取機・スリッターで品質を決めるポイント</a></li>
+      <li><a href="#s6">ラボ機から量産機へ｜スケールアップで見落とされる3点</a></li>
+      <li><a href="#s7">CTIが提供できる価値</a></li>
+      <li><a href="#faq">よくあるご質問</a></li>
+    </ol>
+  </div>
+
+  <p>リチウムイオン電池（LIB）の研究開発や新規参入の現場では、「試作機を1台買えば電池を作れる」というほど単純な話ではありません。電池の試作には、混練、塗工、乾燥、プレス、スリット、巻取／積層、注液、封止と複数の工程があり、工程ごとに専門の装置が必要です。本ページでは、それぞれの装置の役割と選び方、そして試作から量産へスケールアップする際に見落とされやすいポイントを整理します。</p>
+
+  <!-- ===== セクション1 ===== -->
+  <section id="s1">
+    <div class="sec-head"><span class="en">CHAPTER 01</span><span class="ja">試作と量産の違い</span></div>
+    <h2 class="sec-title">リチウムイオン電池の試作と量産で求められる装置の違い</h2>
+
+    <h3>試作機（ラボ機）に求められる柔軟性</h3>
+    <p>試作機の目的は、新しい電極材料や電池設計を素早く検証することにあります。スラリーの粘度、塗工厚、プレス圧、巻取径などを頻繁に変えるため、装置側には条件可変性と段取り替えの速さが求められます。たとえば塗工機（コーター）であればヘッドユニットの交換ができること、ロールプレスであれば加圧トン数を細かく設定できることが重要です。1日のうちに複数条件を試すケースも多く、設置スペースは小さく、操作系はシンプルであることが好まれます。</p>
+
+    <h3>量産機に求められる安定性とライン構成</h3>
+    <p>量産機は、24時間連続稼働で同じ品質の電極や電池を安定して作り続けることが目的です。タクトタイムと歩留まりが評価軸になり、塗工速度が上がれば乾燥能力も比例して増やす必要があります。各装置がインライン化され、テンション制御や蛇行制御で前後工程と同期します。試作機と量産機を別メーカーで揃えると、条件移管がうまくいかず量産立ち上げが遅れることが多いため、設計思想を揃えた装置選定が現場では大きな差になります。</p>
+  </section>
+
+  <!-- ===== セクション2 ===== -->
+  <section id="s2">
+    <div class="sec-head"><span class="en">CHAPTER 02</span><span class="ja">電池試作の全工程</span></div>
+    <h2 class="sec-title">電池試作の全工程と、それぞれの工程で必要な装置</h2>
+    <p>リチウムイオン電池の試作は、以下のような工程に分かれます。CTIでは①〜⑤の電極製造工程を中心に、装置設計から製作まで一貫対応しています。</p>
+
+    <table class="spec">
+      <tr><th>工程</th><th>装置</th><th>主な役割</th></tr>
+      <tr><td>① 混練（ミキシング）</td><td>混練機（プラネタリーミキサー等）</td><td>活物質・導電助剤・バインダーを混ぜて電極スラリーを作る</td></tr>
+      <tr><td>② 電極塗工</td><td>ロールコーター（塗布装置）</td><td>銅箔・アルミ箔の上にスラリーを正極／負極として塗布する</td></tr>
+      <tr><td>③ 乾燥</td><td>コータードライヤー、テンターオーブン</td><td>溶媒を蒸発させ、電極を均一に固化させる</td></tr>
+      <tr><td>④ ロールプレス</td><td>ロールプレス装置</td><td>電極を加圧して密度を上げ、容量と耐久性を確保する</td></tr>
+      <tr><td>⑤ スリット</td><td>スリッター</td><td>電極を任意の幅に裁断する</td></tr>
+      <tr><td>⑥ 巻取／積層</td><td>捲回装置、積層装置</td><td>正極／負極／セパレーターをセル形状に組み立てる</td></tr>
+      <tr><td>⑦ タブ形成・封止・注液</td><td>タブ形成装置、ヒートシーラー、電解液注液装置</td><td>セルを封止し、電解液を注入して電池として完成させる</td></tr>
+    </table>
+
+    <h3>① 混練（ミキシング）｜電極スラリーを作る</h3>
+    <p>活物質、導電助剤、バインダー、溶媒を均一に分散させる工程です。プラネタリー型ミキサーが主流で、せん断力と公転・自転で凝集をほぐします。スラリーの粘度や固形分濃度が後工程の塗工性能を決めるため、容量と回転条件のレンジが広い装置を選ぶことが望ましいです。</p>
+
+    <h3>② 電極塗工（コーティング）｜正極・負極を作る</h3>
+    <p>金属箔の上にスラリーを塗布する工程です。塗工厚の精度がセルの容量ばらつきに直結するため、塗工精度はμm単位で管理されます。正極にはアルミ箔、負極には銅箔を使い、スラリー粘度に応じてダイヘッド・コンマヘッド・グラビアの方式を使い分けます（次章で解説）。</p>
+
+    <h3>③ 乾燥｜電極の品質を決める工程</h3>
+    <p>乾燥は単に溶媒を飛ばす工程ではなく、バインダーの再分布と表面状態を決める重要工程です。乾燥が早すぎるとバインダーが表面に偏り、結着性が低下します。逆に遅すぎるとライン速度を律速してしまうため、温度プロファイルと風速制御の両方が肝になります。CTIは熱風技術を本業とするメーカーであり、テンターオーブンやコータードライヤーで蓄積した熱風制御を電極乾燥に活かしています。</p>
+
+    <h3>④ ロールプレス｜電極密度を上げる</h3>
+    <p>塗工・乾燥後の電極を加圧して密度を高める工程です。密度はエネルギー密度に直結する一方、上げすぎると電解液の浸み込みが悪くなりレート特性が落ちます。試作では1t〜10tクラスのテーブル型・小型ロールプレスで条件を振り、量産では数十tクラスを使うのが一般的です。</p>
+
+    <h3>⑤ スリット（裁断）｜任意幅にカット</h3>
+    <p>電極を電池サイズに合わせた幅に切り出す工程です。バリ（カット端の毛羽立ち）はショートの原因になるため、刃物の精度と張力制御が重要です。</p>
+
+    <h3>⑥ 巻取／積層｜セル形状をつくる</h3>
+    <p>円筒型・角型は捲回、ラミネート（パウチ）型は積層で組み立てます。18650円筒型では寸法精度が求められ、巻きズレや異物混入があると不良品となります。</p>
+
+    <h3>⑦ タブ形成・封止・電解液注液</h3>
+    <p>タブ（リード）を電極に取り付け、外装をシールし、最後に電解液を注液してセルを完成させます。注液は電解液量の正確な計量と、真空下での含浸処理がポイントです。</p>
+  </section>
+
+  <!-- ===== セクション3 ===== -->
+  <section id="s3">
+    <div class="sec-head"><span class="en">CHAPTER 03</span><span class="ja">塗工機の選び方</span></div>
+    <h2 class="sec-title">電極塗工機（コーター）の方式と選び方</h2>
+
+    <div class="cards">
+      <div class="card"><h4>ダイヘッド方式</h4><p>液材を空気に触れさせず供給。塗工厚精度が高く、量産ラインで主流。スラリー粘度の幅広い領域に対応。</p></div>
+      <div class="card"><h4>コンマヘッド方式</h4><p>仕組みがシンプルでメンテナンス性が高い。試作や中粘度のスラリーに向く。コストパフォーマンスが良い。</p></div>
+      <div class="card"><h4>グラビア方式</h4><p>薄塗りに強く、低粘度スラリーや特殊フィルム塗布に使われる。試作で薄膜化を検討する場面で活躍。</p></div>
+    </div>
+
+    <h3>試作で重要な「ヘッド交換性」と「乾燥能力」</h3>
+    <p>試作の現場では、スラリーの種類が変わるたびに塗工方式を変えたいケースが頻発します。ヘッド部がユニット化されていて交換できるロールコーターであれば、ダイヘッド・コンマ・グラビアを1台でカバーでき、装置を買い増す必要がありません。さらにCTIのコータードライヤー（フローティング／ロールサポート）と組み合わせれば、乾燥スピードに合わせた高性能な乾燥炉を後段に追加でき、薄塗り条件から厚塗り条件まで柔軟に検証できます。</p>
+  </section>
+
+  <!-- ===== セクション4 ===== -->
+  <section id="s4">
+    <div class="sec-head"><span class="en">CHAPTER 04</span><span class="ja">プレス装置</span></div>
+    <h2 class="sec-title">ロールプレス装置の選び方と加圧方式</h2>
+
+    <h3>加圧トン数の考え方（1t〜数十t）</h3>
+    <p>加圧トン数は、電極の目標密度と基材幅から逆算します。試作用途では1t〜10tクラス、量産用途では20t〜50tクラスが目安です。基材幅が広くなるほど線圧を確保するために大きなトン数が必要になります。</p>
+
+    <h3>加熱ロール対応とメンテナンス性</h3>
+    <p>バインダーの軟化点を超えて押し込みたい場合は加熱ロール（ヒーター内蔵ロール）が必要です。プレスロール本体は摩耗・傷付きが避けられない消耗部品のため、交換やメンテナンスが容易な設計の装置を選んでおくと、長期運用のダウンタイムを大きく削減できます。</p>
+  </section>
+
+  <!-- ===== セクション5 ===== -->
+  <section id="s5">
+    <div class="sec-head"><span class="en">CHAPTER 05</span><span class="ja">巻取・スリット</span></div>
+    <h2 class="sec-title">巻取機・スリッターで品質を決めるポイント</h2>
+
+    <h3>蛇行制御とテンション制御</h3>
+    <p>電極箔は薄く伸びやすいため、巻取・スリットでは蛇行とテンション変動が即不良に繋がります。EPC（蛇行制御）とテンション制御の精度が品質を左右します。試作で得た条件を量産機に移管できるよう、制御方式の互換性も装置選定の評価軸に入れるべきです。</p>
+
+    <h3>異物混入対策</h3>
+    <p>金属粉や埃の混入は内部短絡の主因です。クリーンルーム環境はもちろん、装置側の摺動部や送給部に対してダスト発生源対策が施されているかを確認してください。</p>
+  </section>
+
+  <!-- ===== セクション6 ===== -->
+  <section id="s6">
+    <div class="sec-head"><span class="en">CHAPTER 06</span><span class="ja">スケールアップ</span></div>
+    <h2 class="sec-title">ラボ機から量産機へ｜スケールアップで設計者が見落としがちな3点</h2>
+
+    <div class="callout">
+      <p>「ラボ機ではうまくいったのに、量産機にすると同じ条件で電池が作れない」——多くの新規参入企業が直面する壁です。原因はだいたい次の3つに集約されます。</p>
+    </div>
+
+    <h3>1. 乾燥能力の連続性</h3>
+    <p>塗工速度を2倍にすれば、原則として乾燥に必要な時間も増えます。乾燥炉の長さや温度・風速プロファイルが追従しないと、ラボ機で得た膜質を量産機で再現できません。CTIは熱風技術を本業とするため、塗工速度に対して必要な乾燥仕様を逆算し、塗工〜乾燥を一体で設計できる強みがあります。</p>
+
+    <h3>2. ライン同期と歩留まり</h3>
+    <p>量産機は複数装置が連続稼働するため、1工程の停止が前後工程の在庫待ちや空運転を引き起こします。テンション制御と蛇行制御の同期、ライン制御PLCの統合を試作段階から見据えて設計することが、量産立ち上げの早さを決めます。</p>
+
+    <h3>3. 設備のフットプリントと電源条件</h3>
+    <p>研究棟と量産棟ではフロア荷重・天井高・電源容量・排気設備が大きく異なります。装置選定時にユーティリティ条件を最初に共有しておくと、後工程での予期せぬ追加工事を防げます。</p>
+  </section>
+
+  <!-- ===== セクション7 ===== -->
+  <section id="s7">
+    <div class="sec-head"><span class="en">CHAPTER 07</span><span class="ja">CTIの提供価値</span></div>
+    <h2 class="sec-title">株式会社CTIがリチウムイオン電池試作・量産装置で提供できる価値</h2>
+
+    <h3>熱風・乾燥技術を中核にした塗工〜乾燥の一体設計</h3>
+    <p>CTIは創業以来、熱風と乾燥を本業としてきた産業機械メーカーです。LIB電極用コータードライヤー、LIB用フィルム向けテンターオーブンに加え、特殊製品としてアニール炉やエアーノズル、熱源（蒸気・電気・油）の選定までトータルで設計します。塗工と乾燥を別ベンダーに分けず一体で提案できる点が、他社にはない強みです。</p>
+
+    <h3>ラボ機から量産機までを同じ設計思想でスケール</h3>
+    <p>正極・負極用塗工装置（1層／2層）、セパレーター用塗工装置、ロールプレス装置、検品巻替装置、タブ形成装置をラインアップしています。試作機で得た条件を、同じ設計思想のまま量産機にスケールアップできるため、量産立ち上げ時の条件再調整を最小化できます。</p>
+
+    <h3>設計から製缶・組立・現地据付まで一貫対応</h3>
+    <p>機械設備の設計、精密板金加工、製缶加工、機械加工、組立、塗装、梱包出荷、現地据え付けまでを社内一貫体制で行います。複数装置を別々に発注して統合検証する手間がなく、責任の所在が一本化されるため、研究機関や材料メーカーが新規ラインを立ち上げる際の総工期を圧縮できます。</p>
+
+    <p style="margin-top:24px"><a href="/industorial/">▸ 産業機械部の主要製品ラインアップを見る</a><br><a href="/activity/">▸ CTIの取り組みと開発事例を見る</a></p>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq">
+    <div class="sec-head"><span class="en">FAQ</span><span class="ja">よくあるご質問</span></div>
+    <h2 class="sec-title">リチウムイオン電池試作機に関するよくあるご質問</h2>
+
+    <details class="faq" open>
+      <summary>試作機（ラボ機）と量産機の違いは何ですか？</summary>
+      <div class="a">試作機は処理量よりも条件可変性と段取り替えの速さを優先する装置です。一方、量産機はタクトタイムと歩留まりを優先し、ライン全体の同期と継続稼働を重視します。CTIは両者を同じ設計思想でスケールできる体制を持っています。</div>
+    </details>
+
+    <details class="faq">
+      <summary>電極塗工機にはどのような方式がありますか？</summary>
+      <div class="a">ダイヘッド方式、コンマヘッド方式、グラビア方式の3つが代表的です。粘度や薄塗り要件で使い分けが必要で、試作段階ではヘッド交換型のロールコーターを選ぶと装置を買い換えずに済みます。</div>
+    </details>
+
+    <details class="faq">
+      <summary>ロールプレスの加圧トン数はどう選びますか？</summary>
+      <div class="a">電極の目標密度と基材幅から逆算します。試作用途では1t〜10tクラス、量産用途では数十tクラスが目安です。加熱ロール対応の有無も合わせて検討します。</div>
+    </details>
+
+    <details class="faq">
+      <summary>ラボから量産にスケールアップするときに気を付ける点は？</summary>
+      <div class="a">塗工速度に追従する乾燥能力、ライン全体のテンション同期、設置スペースと電源容量の3点が見落とされやすい項目です。CTIはテンターオーブンで培った熱風技術を活用し、量産時の乾燥不足や色ムラを抑えます。</div>
+    </details>
+
+    <details class="faq">
+      <summary>リチウムイオン電池の試作機・量産機を一括で発注できますか？</summary>
+      <div class="a">はい、可能です。CTIは設計、精密板金加工、製缶加工、機械加工、組立、塗装、梱包出荷、現地据付までを社内一貫で対応しており、複数装置の同時設計と統合検証ができます。</div>
+    </details>
+
+    <details class="faq">
+      <summary>全固体電池や次世代電池の試作にも対応できますか？</summary>
+      <div class="a">対応可能です。CTIは熱風乾燥と精密塗工をベースとしたカスタムマシン開発を強みとしており、固体電解質スラリーの塗工や薄膜化など、新規研究開発テーマへの装置設計をご相談いただけます。</div>
+    </details>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <div class="cta">
+    <h3>リチウムイオン電池の試作機・量産機のご相談はCTIへ</h3>
+    <p>CTIは「無から有を生む」カスタムオーダーメイドの産業機械メーカーです。<br>電池メーカー・材料メーカー・研究機関のお客様の試作〜量産化を、熱風技術と一貫設計でサポートします。</p>
+    <a href="/contact/" class="btn">お問い合わせはこちら</a>
+  </div>
+
+</main>
+
+<footer>
+  &copy; 2026 株式会社CTI All rights reserved.
+</footer>
+
+</div><!-- /#report-content -->
+
+<script>
+  const HASH = "e77d0d12eb86247f1229f7d584fc91a75102c5828c6218fb25ceac51e51cadf8";
+  const SESSION_KEY = "cti_mockup_lib_2026_04_28";
+
+  async function sha256(str) {
+    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, "0")).join("");
+  }
+  async function checkPassword() {
+    const input = document.getElementById("password-input").value;
+    const hash = await sha256(input);
+    if (hash === HASH) {
+      sessionStorage.setItem(SESSION_KEY, "1");
+      revealReport();
+    } else {
+      document.getElementById("auth-error").style.display = "block";
+      document.getElementById("password-input").value = "";
+      document.getElementById("password-input").focus();
+    }
+  }
+  function revealReport() {
+    document.getElementById("auth-screen").style.display = "none";
+    document.getElementById("report-content").style.display = "block";
+  }
+  // セッション中の再認証スキップ
+  if (sessionStorage.getItem(SESSION_KEY) === "1") {
+    revealReport();
+  } else {
+    // 入力欄に自動フォーカス
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("password-input").focus();
+    });
+  }
+</script>
+
+</body>
+</html>
